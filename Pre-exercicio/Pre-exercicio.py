@@ -17,20 +17,26 @@ def maior(a,b):
 
 def soma(lista,x=0):
   """
-  retorna o somatório dos valores passados pela lista.
+  retorna o somatório dos valores passados pela lista (sem usar sum()).
   O argumento x deve é opcional, se passado será somado ao resultado final.
   @author: Diógenes Vaz de Melo
   """
   lista.append(x)
-  return sum(lista)
+  for i in lista:
+    i += i
+  return i
 
 def media(lista):
   """
   Retorna a média dos valores passados pela lista.
   @author: Diógenes Vaz de Melo
-  """
+
   import statistics
   return statistics.mean(lista)
+  """
+  a = len(lista)
+  s = soma(lista)
+  return s / a
 
 def valores_iguais(lista1,lista2):
   """
